@@ -1,0 +1,4 @@
+--recursive
+--require should
+--require regenerator-runtime/runtime
+--require babel-register

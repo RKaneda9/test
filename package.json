@@ -1,0 +1,51 @@
+{
+  "name": "@ifit/weight-log-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "iFit",
+  "license": "ISC",
+  "scripts": {
+    "build": "babel src -d out",
+    "start": "sls offline",
+    "test-unit": "nyc mocha ./src/**/*u-spec.js",
+    "test-integration": "echo \"No Integration Tests Yet\"",
+    "test-acceptance": "sls offline --exec mocha",
+    "test": "yarn test-unit && yarn test-integration && yarn test-acceptance",
+    "lint": "eslint . --fix",
+    "check-lint": "eslint .",
+    "deploy": "yarn build && sls deploy"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "exclude": [
+      "**/*spec.js",
+      "out"
+    ]
+  },
+  "dependencies": {
+    "@ifit/wool": "^4.2.0",
+    "dotenv": "4.x"
+  },
+  "devDependencies": {
+    "@ifit/eslint-config": "^1.0.1",
+    "babel-cli": "6.x",
+    "babel-eslint": "7.x",
+    "babel-plugin-istanbul": "4.x",
+    "babel-preset-env": "1.x",
+    "babel-register": "6.x",
+    "codecov": "2.x",
+    "eslint": "3.x",
+    "mocha": "3.x",
+    "nyc": "10.x",
+    "request": "2.x",
+    "request-promise": "4.x",
+    "serverless": "1.x",
+    "serverless-offline": "3.x",
+    "should": "11.x",
+    "should-sinon": "^0.0.5",
+    "sinon": "2.x"
+  }
+}

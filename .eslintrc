@@ -1,0 +1,7 @@
+{
+  "extends": "@ifit",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

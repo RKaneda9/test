@@ -1,0 +1,4 @@
+coverage:
+  ignore:
+    - "**/*.spec.js"
+    - "out"

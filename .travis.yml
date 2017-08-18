@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+services:
+- mongodb
+before_install:
+- echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+install:
+- yarn install
+script:
+- yarn run check-lint
+- yarn run test
+after_success:
+- yarn run coverage

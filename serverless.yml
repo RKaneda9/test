@@ -1,0 +1,13 @@
+service: example
+provider:
+  name: aws
+  runtime: nodejs6.10
+functions:
+  example:
+    handler: index.example
+    events:
+      - http:
+          path: /example
+          method: get
+plugins:
+  - serverless-offline
